@@ -13,18 +13,16 @@ public final class FuncionesTaller {
     }
 
     /**
-     * Selecciona ciudades que empiezan por M, las convierte a mayúsculas
+     * Selecciona ciudades que empiezan por La letra seleccionada, las convierte a mayúsculas
      * y las ordena alfabéticamente.
      *
      * @param ciudades lista de ciudades que se va a procesar
-     * @return nueva lista con las ciudades que empiezan por M
+     * @return nueva lista con las ciudades filtradas
      */
-    public static List<String> filtrarCiudadesM(List<String> ciudades) {
+    public static List<String> filtrarCiudadesPorLetra(List<String> ciudades, char letra) {
         return ciudades.stream()
-                .filter(ciudad -> ciudad.startsWith("M"))
-                .map(String::toUpperCase)
-                .sorted()
-                .collect(Collectors.toList());
+                .filter(ciudad -> ciudad.toUpperCase().startsWith(String.valueOf(letra).toUpperCase()))
+                .toList();
     }
 
     /**

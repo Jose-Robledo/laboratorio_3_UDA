@@ -9,27 +9,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class FuncionesTallerTest {
 
     @Test
-    void filtraCiudadesQueEmpiezanPorM() {
-        List<String> resultado = FuncionesTaller.filtrarCiudadesM(
-                List.of("Medellin", "Bogota", "Monteria", "Cali")
+    void filtraCiudadesPorLetraSeleccionada() {
+        List<String> resultado = FuncionesTaller.filtrarCiudadesPorLetra(
+                List.of("Medellin", "Bogota", "Monteria", "Cali"), 'M'
         );
 
-        assertEquals(List.of("MEDELLIN", "MONTERIA"), resultado);
+        assertEquals(List.of("Medellin", "Monteria"), resultado);
     }
 
     @Test
-    void ordenaCiudadesAlfabeticamente() {
-        List<String> resultado = FuncionesTaller.filtrarCiudadesM(
-                List.of("Monteria", "Malpelo", "Marinilla")
+    void filtraCiudadesSoportandoMinusculasYMayusculas() {
+        List<String> resultado = FuncionesTaller.filtrarCiudadesPorLetra(
+                List.of("Medellin", "Bogota", "monteria", "Cali"), 'm'
         );
 
-        assertEquals(List.of("MALPELO", "MARINILLA", "MONTERIA"), resultado);
+        assertEquals(List.of("Medellin", "monteria"), resultado);
     }
 
     @Test
-    void devuelveListaVaciaSiNingunaCiudadEmpiezaPorM() {
-        assertTrue(FuncionesTaller.filtrarCiudadesM(
-                List.of("Bogota", "Cali", "Pereira")
+    void devuelveListaVaciaSiNingunaCiudadCoincideConLaLetra() {
+        assertTrue(FuncionesTaller.filtrarCiudadesPorLetra(
+                List.of("Bogota", "Cali", "Pereira"), 'M'
         ).isEmpty());
     }
 
