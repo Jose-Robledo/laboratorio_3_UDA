@@ -43,21 +43,3 @@ Taller3_Paradigma_Funcional/
 2. **Notas:** `filter()` conserva las notas >= 3.0; `map()` suma 0.2 y `Math.min()` limita el resultado a 5.0. `Main` usa `forEach()` para mostrar cada nota.
 3. **Potencia:** caso base `exponente == 0`, que devuelve 1; caso recursivo `base * potencia(base, exponente - 1)`. No se utiliza `Math.pow()`.
 
-## Git y GitHub
-
-Desde esta carpeta, después de crear el repositorio vacío en GitHub:
-
-```bash
-git init
-git add .
-git commit -m "Completa taller 3 de paradigma funcional"
-git branch -M main
-git remote add origin URL_DE_TU_REPOSITORIO
-git push -u origin main
-```
-
-Reemplaza `URL_DE_TU_REPOSITORIO` por la URL real del repositorio. No subas la carpeta `target/`; está excluida en `.gitignore`.
-
-## Participación en el video
-
-Una propuesta de reparto para tres integrantes está incluida en el documento `GUIA_VIDEO.md`.
