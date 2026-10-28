@@ -1,10 +1,11 @@
 package com.udea.funcional;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 class FuncionesTallerTest {
 
@@ -14,7 +15,7 @@ class FuncionesTallerTest {
                 List.of("Medellin", "Bogota", "Monteria", "Cali"), 'M'
         );
 
-        assertEquals(List.of("Medellin", "Monteria"), resultado);
+        assertEquals(List.of("MEDELLIN", "MONTERIA"), resultado);
     }
 
     @Test
@@ -23,7 +24,7 @@ class FuncionesTallerTest {
                 List.of("Medellin", "Bogota", "monteria", "Cali"), 'm'
         );
 
-        assertEquals(List.of("Medellin", "monteria"), resultado);
+        assertEquals(List.of("MEDELLIN", "MONTERIA"), resultado);
     }
 
     @Test

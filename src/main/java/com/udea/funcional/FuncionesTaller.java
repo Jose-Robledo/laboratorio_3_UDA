@@ -13,17 +13,22 @@ public final class FuncionesTaller {
     }
 
     /**
-     * Selecciona ciudades que empiezan por La letra seleccionada, las convierte a mayúsculas
-     * y las ordena alfabéticamente.
+     * Selecciona ciudades que empiezan por La letra seleccionada, las convierte
+     * a mayúsculas y las ordena alfabéticamente.
      *
      * @param ciudades lista de ciudades que se va a procesar
      * @return nueva lista con las ciudades filtradas
      */
-    public static List<String> filtrarCiudadesPorLetra(List<String> ciudades, char letra) {
-        return ciudades.stream()
-                .filter(ciudad -> ciudad.toUpperCase().startsWith(String.valueOf(letra).toUpperCase()))
-                .toList();
-    }
+    public static List<String> filtrarCiudadesPorLetra(
+        List<String> ciudades, char letra) {
+
+    return ciudades.stream()
+            .filter(ciudad -> ciudad.toUpperCase()
+                    .startsWith(String.valueOf(letra).toUpperCase()))
+            .map(String::toUpperCase)
+            .sorted()
+            .toList();
+}
 
     /**
      * Conserva las notas aprobadas, les suma 0.2 y limita el resultado a 5.0.
@@ -39,8 +44,8 @@ public final class FuncionesTaller {
     }
 
     /**
-     * Calcula una potencia entera usando recursividad, sin Math.pow().
-     * El exponente debe ser mayor o igual que cero.
+     * Calcula una potencia entera usando recursividad, sin Math.pow(). El
+     * exponente debe ser mayor o igual que cero.
      *
      * @param base número que se eleva
      * @param exponente cantidad de multiplicaciones
